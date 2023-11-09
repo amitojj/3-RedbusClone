@@ -1,169 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="Amit Arora" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900;1000&family=Raleway:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="Amit Arora" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900;1000&family=Raleway:wght@400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css"
+  />
+  
+  <title> </title>
+  <style>
+   
+  </style>
+</head>
 
-    <title> </title>
-    <style>
-      :root {
-        --cbg: white;
-        --ct1: #4a4a4a;
-        --ct2: white;
-        --rale: "Raleway", sans-serif;
-        --nun: "Nunito", sans-serif;
-        --mon: "Montserrat", sans-serif;
-      }
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-      }
-      body {
-        background-color: var(--cbg);
-        font-family: var(--mon);
-        width: 100%;
-        height: 200vh;
-      }
-      a {
-        text-decoration: none;
-      }
-      a:hover {
-        cursor: pointer;
-      }
-      ul {
-        list-style: none;
-      }
-      nav {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        /* height: 100px; */
-        /* background-color: #fff000; */
-        display: flex;
-        justify-content: space-around;
-        padding-block: 20px;
-        font-size: 14px;
-        font-weight: 500;
-        user-select: none;
-        color: var(--ct1);
-        background-color: var(--cbg);
-        z-index: 10;
-      }
-      .logo_menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo_menu > img {
-        height: 50px;
-      }
-      .seperator {
-        margin-inline: 80px;
-        border-right: 1px solid #ddd;
-        height: 25px;
-      }
-      .menu {
-        display: flex;
-        gap: 20px;
-      }
-      .menu_item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        filter: grayscale(1);
-        gap: 10px;
-        border-radius: 5px;
-        padding: 10px;
-      }
-      .menu_item:hover {
-        filter: none;
-        background-color: #ddd;
-      }
-      .help_account {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-      }
-      .ha_wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px 10px;
-        border-radius: 5px;
-        gap: 10px;
-      }
-      .ha_wrap > i {
-        font-size: 20px;
-      }
-      .fa-chevron-down {
-        font-size: 10px !important;
-      }
-      .ha_wrap:hover {
-        background-color: #ddd;
-        cursor: pointer;
-      }
-      .hero_section {
-        /* width: 100%; */
-        background: url("assets/HeroImage.png") 0% 0% / cover round;
-        height: 32.5rem;
-        background-size: cover;
-        background-repeat: round;
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav>
-      <div class="logo_menu">
-        <img src="./assets/redbus-logo.svg" alt="" />
-        <div class="seperator"></div>
-        <ul class="menu">
-          <li class="menu_item">
-            <img src="./assets/rb_vertical.svg" alt="" />
-            <p>Bus Tickets</p>
-          </li>
-          <li class="menu_item">
-            <img src="./assets/ryde_vertical.svg" alt="" />
-            <p>Cab Central</p>
-          </li>
-          <li class="menu_item">
-            <img src="./assets/rail_vertical.svg" alt="" />
-            <p>Train Tickets</p>
-          </li>
-        </ul>
+<body>
+  <nav>
+    
+    <div class="logo">
+      <img src="./assets/redbus-logo.svg" alt="" />
+    </div>
+    <div class="bars_menu">
+      <div class="bars">
+        <i class="fa-solid fa-bars"></i>
       </div>
-      <div class="help_account">
-        <div class="ha_wrap">
-          <i class="fa fa-headset"></i>
-          <p>Help</p>
-        </div>
-        <div class="ha_wrap">
-          <i class="fa-regular fa-circle-user"></i>
-          <p>Account</p>
-          <i class="fa fa-chevron-down"></i>
-        </div>
+      <div class="seperator"></div>
+      <ul class="menu">
+        <li class="menu_item">
+          <img src="./assets/rb_vertical.svg" alt="" />
+          <p>Bus Tickets</p>
+        </li>
+        <li class="menu_item">
+          <img src="./assets/ryde_vertical.svg" alt="" />
+          <p>Cab Central</p>
+        </li>
+        <li class="menu_item">
+          <img src="./assets/rail_vertical.svg" alt="" />
+          <p>Train Tickets</p>
+        </li>
+      </ul>
+    </div>
+    <div class="help_account">
+      <div class="ha_wrap">
+        <i class="fa fa-headset"></i>
+        <p>Help</p>
       </div>
-    </nav>
-    <main>
-      <div class="hero_section"></div>
-    </main>
-  </body>
+      <div class="ha_wrap">
+        <i class="fa-regular fa-circle-user"></i>
+        <p>Account</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="hero_section"></div>
+  </main>
+</body>
 </html>
