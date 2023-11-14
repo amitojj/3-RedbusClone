@@ -374,7 +374,7 @@ ul {
 }
 /* ─── Offers-section ─────────────────────────────────────────────────── ✣ ─ */
 .rb_offers {
-  width: 80vw;
+  width: 85%;
   border-radius: 2rem;
   border: 1px solid #ccc;
   margin: auto;
@@ -384,7 +384,7 @@ ul {
   box-shadow: 1px 5px 5px #cccccc;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding:2rem;
   gap: 1rem;
 }
 /* ─── Offer-header ───────────────────────────────────────────────────── ✣ ─ */
@@ -415,10 +415,44 @@ ul {
   overflow-x: hidden;
   gap: 1rem;
   transition: overflow 2s linear 1s;
+  position:relative
 }
 .rb_offer_cards:hover{
   overflow-x: auto;
 }
+.rb_arrows{
+  display: none;
+  /* justify-content: center; */
+  align-items: center;
+  position: absolute;
+  width: 60px;
+  height: 200px;
+  cursor: pointer;
+}
+.rb_offer_cards:hover .rb_arrows{
+  display: flex;
+  
+}
+.left_arrow{
+  
+  background-image: linear-gradient(to right,white ,#ffffff34 );
+  left: 0;
+  
+}
+.right_arrow{
+  justify-content: end;
+  background-image: linear-gradient(to left,white ,#ffffff34 );
+  right: 0;
+  
+}
+.ar_angles{
+  padding: 15px 20px;
+  color: rgb(0, 0, 115);
+  background-color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
 .rb_card{
   width: 250px;
   min-width: 250px;
@@ -541,6 +575,10 @@ ul {
   .rb_offer_cards:hover{
     overflow-y: auto;
   }
+  .rb_offer_cards:hover .rb_arrows{
+    display: none;
+    
+  }
   .rb_card{
     width: 200px;
     min-width: 200px;
@@ -585,4 +623,281 @@ ul {
     height: auto;
     cursor: pointer;
   }
+}
+/* ─── Advertisement ──────────────────────────────────────────────────── ✣ ─ */
+.rb_advert{
+  width: 70%;
+  margin-top: -7rem;
+  margin-inline: auto;
+  border-radius: 1rem;
+}
+.rb_advert img{
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  
+}
+@media (max-width: 1023px) {
+  .rb_advert{
+    margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  .rb_advert{
+    margin-top:-5rem;
+  }
+}
+@media (max-width: 426px) {
+  .rb_advert{
+    margin-top:0;
+  }
+}
+/* ─── Rides ──────────────────────────────────────────────────────────── ✣ ─ */
+.rb_rides{
+  width: 80%;
+  display: flex;
+  margin-inline: auto;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  
+}
+.rb_rides_left{
+  width: 50%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+}
+.rides_header{
+  font-size: calc(1.2rem + 0.75vw);
+}
+.rides_header span{
+  font-weight: 600;
+}
+.ride_tabs{
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  
+  border-bottom: 1px solid #ccc;
+  font-size: min(calc(0.6rem + 0.75vw) , 1.2rem);
+  width: fit-content;
+  margin-block: 2rem;
+}
+.rental , .train{
+  /* border: 1px solid #ccc; */
+  padding: 1rem;
+  border-radius:1rem 1rem 0 0 ;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+.rental{
+  border-bottom: 3px solid #d84e55;
+  color: #d84e55;
+  font-weight: 500;
+}
+.train{
+  padding-right: 3rem;
+  filter: grayscale();
+}
+.train:hover{
+  filter: none;
+  background-color: #ccc;
+}
+.tab_separator{
+  border: 1px solid #ccc;
+  margin-block: 1rem;
+  
+}
+.rb_rides_left > p{
+  margin-bottom: 1.5rem;
+}
+.ride_mode{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  
+}
+.ride_mode p{
+  margin: 0 1rem;
+  
+}
+.mode_img_cont{
+  width: 80px;
+  height: 50px;
+  display: flex;
+  
+}
+.mode_img_cont > img{
+  width: 80px;
+  
+  
+}
+.ride_tabs img{
+  width: calc(1rem + 3.0vw);
+  max-width: 4rem;
+}
+.rb_rides_right{
+  width: 50%;
+  flex-grow: 1;
+  background-image: url('./assets/busbg.svg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  
+}
+.rb_rides_right img{
+  width: 116%;
+  margin-left: -90px;
+  margin-bottom: 5rem;
+  right: 0;
+}
+.ride_book{
+  display: flex;
+  gap :2rem;
+  background-color: #d84e55;
+  width: fit-content;
+  padding: 1rem;
+  align-items: center;
+  color: white;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  font-size: min(calc(0.6rem + 0.75vw) , 1rem);
+  font-weight: 600;
+  
+}
+@media (max-width: 768px) {
+  .rb_rides_right{
+    display: none;
+  }
+  .ride_tabs{
+    gap: 0.5rem;
+  }
+  .train{
+    padding-right: 1rem;
+    filter: grayscale();
+  }
+}
+/* ─── Apps ───────────────────────────────────────────────────────────── ✣ ─ */
+.rb_apps{
+  background-image: url('./assets/appInstallbg.svg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 80%;
+  display: flex;
+  padding: 2rem;
+  gap: 4rem;
+  align-items: center;
+  border-radius: 2rem;
+  margin: auto;
+  color: white;
+  flex-wrap: wrap;
+  
+}
+.review>p{
+  font-size: calc(1.2rem + 0.75vw);
+  color: white;
+  margin-bottom: 2rem;
+}
+.rtg_box{
+  background-color: #fff;
+  display: flex;
+  padding: 2rem;
+  border-radius: 1rem;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #4a4a4a;
+}
+.feature{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.feature > i{ 
+  color: #36b077;
+  font-size:1.2rem
+  
+}
+.ratings{
+  display: flex;
+  gap: 1rem;
+  
+}
+.stars{
+  font-size: 1.2rem;
+  font-weight:600;
+}
+.rtg_os{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.downloads{
+  font-size: 0.9rem;
+}
+.store{
+  font-size: 1rem;
+  font-weight: 500;
+}
+.os_sep{
+  border: 1px solid #ccc;
+}
+.qr_code {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 1rem;
+  width: 7rem;
+  height: 10rem;
+}
+.store_butt{
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 1rem;
+  width: 9rem;
+  height: 10rem;
+}
+@media (max-width: 1280px){
+  .rb_apps{
+    background-image: none;
+    background-color: #be5454;
+  }
+}
+@media (max-width: 1024px){
+  .rb_apps{
+  /* flex-direction: column; */
+  justify-content: center;
+  }
+ .review > p{
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .rb_apps{
+    width: 90%;
+    background-image: none;
+    background-color: #be5454;
+    padding-inline: 0.5rem;
+    gap: 2rem;
+  }
+  .review > p{
+    text-align: center;
+  }
+  .ratings{
+    flex-direction: column;
+  }
+  .rtg_box{
+    padding-inline: 0.7rem;
+  }
+  
 }
