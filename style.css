@@ -654,7 +654,7 @@ ul {
 }
 /* ─── Rides ──────────────────────────────────────────────────────────── ✣ ─ */
 .rb_rides{
-  width: 80%;
+  width: 85%;
   display: flex;
   margin-inline: auto;
   margin-top: 10rem;
@@ -788,7 +788,7 @@ ul {
   background-image: url('./assets/appInstallbg.svg');
   background-repeat: no-repeat;
   background-size:cover;
-  width: 80%;
+  width: 85%;
   display: flex;
   padding: 2rem;
   gap: 4rem;
@@ -875,10 +875,10 @@ ul {
 }
 @media (max-width: 1024px){
   .rb_apps{
-  /* flex-direction: column; */
-  justify-content: center;
+    /* flex-direction: column; */
+    justify-content: center;
   }
- .review > p{
+  .review > p{
     text-align: center;
   }
 }
@@ -900,4 +900,128 @@ ul {
     padding-inline: 0.7rem;
   }
   
+}
+/* ─── Primo ──────────────────────────────────────────────────────────── ✣ ─ */
+
+.rb_primo{
+  width: 85%;
+  margin-inline: auto;
+  margin-block: 10rem;
+  
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.rb_primo>img{
+  max-width: 90%;
+}
+.rb_primoCards{
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  /* padding-inline: 1rem; */
+  flex-wrap: wrap;
+  
+}
+
+.primo_card {
+  /* flex: 1; */
+  width:350px;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right,#274899,#7c4686);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+}
+.primo_text{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.77rem;
+}
+@media (max-width: 450px){
+  .rb_primo{
+    width: 90%;
+  }
+  .rb_primoCards{
+    padding-inline: 0;
+  }
+  .primo_card{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* ─── Partners ───────────────────────────────────────────────────────── ✣ ─ */
+.partners{
+  width: 85%;
+  margin-inline: auto;
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.partner_hdr{
+  font-size: min(calc(1.5rem + 1.2vw) , 3rem);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.ptnr_rtc{
+  font-size: min(calc(1.5rem + 1vw) , 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ptnr_view{
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid #848484;
+  padding: 0.8rem 1.8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  place-self: center;
+}
+.ptnr_view:hover{
+  box-shadow: 2px 3px 5px #1414147f
+}
+.rtc_list{
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  margin-bottom: 2rem;
+
+}
+.rtc_card{
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  border-radius:;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.msrtc{
+  justify-self: flex-start;
+  margin-top: -1rem;
+}
+.rtc_card>img{
+  width:100px;
+}
+.rtc_card:hover p{
+  background-color: #ccc;
+  padding:0.5rem 1.5rem;
+  border-radius: 2rem;
+}
+@media (max-width:1024px){
+  .rtc_list{
+    gap: 1rem;
+    justify-content: center;
+  }
 }
