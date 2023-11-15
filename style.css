@@ -972,17 +972,18 @@ ul {
   font-weight: 500;
 }
 .ptnr_rtc{
-  font-size: min(calc(1.5rem + 1vw) , 2rem);
+  font-size: min(calc(0.8rem + 1vw) , 2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .ptnr_view{
-  font-size: 1rem;
+  min-width: 70px;
+  font-size: min(calc(0.4rem + 1vw) , 1rem);
   font-weight: 600;
   border: 1px solid #848484;
-  padding: 0.8rem 1.8rem;
-  border-radius: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.6rem;
   cursor: pointer;
   place-self: center;
 }
@@ -1002,7 +1003,6 @@ ul {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
-  border-radius:;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -1024,4 +1024,20 @@ ul {
     gap: 1rem;
     justify-content: center;
   }
+}
+.op_list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+
+}
+.operator{
+  /* max-width: fit-content; */
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+.operator:hover{
+ background-color: #ccc; 
+ cursor: pointer;
 }
