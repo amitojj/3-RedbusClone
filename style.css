@@ -8,6 +8,8 @@
     34px
   );
   --fs_hd2: clamp(25px, calc(25px + 13 * ((100vw - 320px) / 1600)), 38px);
+  --fs_hd3: clamp(14px, calc(14px + 18 * ((100vw - 320px) / 1600)), 32px);
+  --fs_btn1: clamp(8px, calc(8px + 10 * ((100vw - 320px) / 1600)), 18px);
 }
 * {
   margin: 0px;
@@ -23,6 +25,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: #4a4a4a;
 }
 a:hover {
   cursor: pointer;
@@ -206,7 +209,8 @@ ul {
   display: flex;
   text-align: center;
 }
-.hero-right {
+/* ────────────────────────────────────────────────────────────────────── ✣ ─ */
+.hero-left {
   align-self: flex-end;
   display: flex;
   height: 30rem;
@@ -216,7 +220,8 @@ ul {
   width: auto;
   height: 100%;
 }
-.hero-left {
+/* ────────────────────────────────────────────────────────────────────── ✣ ─ */
+.hero-right {
   flex-grow: 1;
   display: flex;
   padding: 2.5rem 2rem 2.5rem 0;
@@ -234,6 +239,7 @@ ul {
   color: #4a4a4a;
   cursor: pointer;
 }
+/* ────────────────────────────────────────────────────────────────────── ✣ ─ */
 .from,
 .to {
   width: 27%;
@@ -264,6 +270,7 @@ ul {
   font-size: 1.3rem;
   font-weight: 600;
 }
+/* ─── Floating-labels ────────────────────────────────────────────────── ✣ ─ */
 .input {
   position: relative;
 }
@@ -273,9 +280,6 @@ ul {
   outline: none;
   width: 100%;
 }
-/* .from-hidden {
-  display: none;
-} */
 .placeholder {
   position: absolute;
   left: 0;
@@ -288,6 +292,7 @@ ul {
   border: none;
   outline: none;
 }
+/* ────────────────────────────────────────────────────────────────────── ✣ ─ */
 .motto {
   color: #fdd67c;
   font-size: var(--fs_hd2);
@@ -296,9 +301,6 @@ ul {
 
 /* ─── Mediaquerry-herosection-1024px ─────────────────────────────────── ✣ ─ */
 @media (max-width: 1024px) {
-  .hero-left{
-    padding-block: 0;
-  }
   .search {
     width: 100%;
     flex-direction: column;
@@ -311,7 +313,7 @@ ul {
   .buses {
     width: 100%;
     justify-content: start;
-    padding: 1rem;
+    padding: 1.5rem;
     gap: 1rem;
     border-bottom: 1px solid #ccc;
   }
@@ -325,7 +327,7 @@ ul {
   }
 }
 /* ─── Mediaquerry-herosection-768px ─────────────────────────────────── ✣ ─ */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .hero_section {
     background: url("./assets/bg2_ver.jpg");
     background-size: cover;
@@ -334,20 +336,16 @@ ul {
     height: 60rem;
     max-height: 60rem;
     position: static;
+    padding-block: 1rem;
   }
-  .hero {
+  /* ────────────────────────────────────────────────────────────── ✣ ─ */
+  .hero-left {
+    padding-left: 2rem;
     align-self: center;
     transform: translateY(-10%);
   }
-  .find {
-    width: 90vw;
-  }
-  .search-container {
-    padding-block: 0;
-    order: -1;
-    justify-content: center;
-  }
-  .find {
+  .search {
+    width: 90%;
     flex-direction: column;
     height: auto;
     border-radius: 2rem;
@@ -358,7 +356,7 @@ ul {
   .buses {
     width: 100%;
     justify-content: start;
-    padding: 1rem;
+    padding: 1.5rem;
     gap: 1rem;
     border-bottom: 1px solid #ccc;
   }
@@ -370,6 +368,13 @@ ul {
     justify-content: center;
     border: none !important;
   }
+  /* ────────────────────────────────────────────────────────────── ✣ ─ */
+  .hero-right {
+    padding-block: 0;
+    padding-inline: 0;
+    order: -1;
+    justify-content: center;
+  }
 }
 /* ─── Main ───────────────────────────────────────────────────────────── ✣ ─ */
 main {
@@ -378,10 +383,8 @@ main {
 }
 /* ─── Offers-section ─────────────────────────────────────────────────── ✣ ─ */
 .rb_offers {
-  width: 85%;
   border-radius: 2rem;
   border: 1px solid #ccc;
-  margin: auto;
   background-color: #fff;
   z-index: 10;
   transform: translateY(-50%);
@@ -398,14 +401,14 @@ main {
   align-items: center;
 }
 .rb_ofr_hdr-title {
-  font-size: min(calc(2vw + 0.5rem), 32px);
+  font-size: var(--fs_hd3);
 }
 .rb_ofr_hdr-view {
   color: royalblue;
-  font-size: min(calc(1.2vw + 0.3rem), 18px);
+  font-size: var(--fs_btn1);
   font-weight: 600;
   border: 1px solid #848484;
-  padding: 0.8rem 1.8rem;
+  padding: 0.7rem 1.6rem;
   border-radius: 2rem;
   cursor: pointer;
 }
@@ -424,6 +427,7 @@ main {
 .rb_offer_cards:hover {
   overflow-x: auto;
 }
+/* ─── Carousel-buttons ───────────────────────────────────────────────── ✣ ─ */
 .rb_arrows {
   display: none;
   /* justify-content: center; */
@@ -452,7 +456,7 @@ main {
   font-size: 20px;
   border-radius: 50%;
 }
-
+/* ─── Offer-card ─────────────────────────────────────────────────────── ✣ ─ */
 .rb_card {
   width: 250px;
   min-width: 250px;
@@ -475,22 +479,30 @@ main {
   height: 70px;
   border-radius: 50%;
 }
+/* ─── Card-text ──────────────────────────────────────────────────────── ✣ ─ */
 .rb_card_cont {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: white;
 }
+/* ─── Offer-category ─────────────────────────────────────────────────── ✣ ─ */
 .rb_off_cat > span {
   border-radius: 1rem;
   padding: 0.2rem 0.5rem;
   background-color: rgba(255, 255, 255, 0.254);
   font-size: 11px;
 }
+/* ─── Offer-desc ─────────────────────────────────────────────────────── ✣ ─ */
 .rb_off {
   font-size: 14px;
   font-weight: 700;
 }
+/* ─── Offer-validity ─────────────────────────────────────────────────── ✣ ─ */
+.rb_off_valid {
+  font-size: 11px;
+}
+/* ─── Offer-code ─────────────────────────────────────────────────────── ✣ ─ */
 .rb_code {
   font-size: 12px;
   font-weight: 600;
@@ -507,9 +519,7 @@ main {
   width: 1.2rem;
   height: auto;
 }
-.rb_off_valid {
-  font-size: 11px;
-}
+/* ─── Card-styles ────────────────────────────────────────────────────── ✣ ─ */
 #style-1 {
   background-image: linear-gradient(
     90deg,
@@ -570,13 +580,13 @@ main {
   );
 }
 /* ─── Mediaquerry 1024 Offers ────────────────────────────────────────── ✣ ─ */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .rb_offers {
     transform: translateY(-10%);
   }
 }
 /* ─── Mediaquerry 768 Offers ────────────────────────────────────────── ✣ ─ */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .rb_offers {
     transform: translateY(-40%);
     padding: 2rem 1rem;
@@ -587,7 +597,7 @@ main {
 }
 @media (max-width: 426px) {
   .rb_offers {
-    transform: translateY(-2%);
+    transform: translateY(-20%);
     height: 30rem;
   }
   .rb_offer_cards {
@@ -651,7 +661,7 @@ main {
 }
 /* ─── Advertisement ──────────────────────────────────────────────────── ✣ ─ */
 .rb_advert {
-  width: 70%;
+  width: 80%;
   margin-top: -7rem;
   margin-inline: auto;
   border-radius: 1rem;
@@ -678,9 +688,7 @@ main {
 }
 /* ─── Rides ──────────────────────────────────────────────────────────── ✣ ─ */
 .rb_rides {
-  width: 85%;
   display: flex;
-  margin-inline: auto;
   margin-top: 10rem;
   margin-bottom: 5rem;
 }
@@ -804,13 +812,11 @@ main {
   background-image: url("./assets/appInstallbg.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 85%;
   display: flex;
   padding: 2rem;
   gap: 4rem;
   align-items: center;
   border-radius: 2rem;
-  margin: auto;
   color: white;
   flex-wrap: wrap;
 }
@@ -822,7 +828,7 @@ main {
 .rtg_box {
   background-color: #fff;
   display: flex;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 1rem;
   flex-direction: column;
   justify-content: space-around;
@@ -830,9 +836,9 @@ main {
 }
 .feature {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .feature > i {
   color: #36b077;
@@ -840,7 +846,7 @@ main {
 }
 .ratings {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 .stars {
   font-size: 1.2rem;
@@ -865,20 +871,22 @@ main {
 .qr_code {
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
-  font-weight: 600;
-  gap: 1rem;
-  width: 7rem;
-  height: 10rem;
-}
-.store_butt {
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   font-size: 1rem;
   font-weight: 600;
   gap: 1rem;
   width: 9rem;
-  height: 10rem;
+  height: 13rem;
+}
+.store_butt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 1rem;
+  width: 9rem;
+  height: 13rem;
 }
 @media (max-width: 1280px) {
   .rb_apps {
@@ -897,7 +905,6 @@ main {
 }
 @media (max-width: 425px) {
   .rb_apps {
-    width: 90%;
     background-image: none;
     background-color: #be5454;
     padding-inline: 0.5rem;
@@ -916,8 +923,6 @@ main {
 /* ─── Primo ──────────────────────────────────────────────────────────── ✣ ─ */
 
 .rb_primo {
-  width: 85%;
-  margin-inline: auto;
   margin-block: 10rem;
 
   display: flex;
@@ -956,9 +961,6 @@ main {
   font-size: 0.77rem;
 }
 @media (max-width: 450px) {
-  .rb_primo {
-    width: 90%;
-  }
   .rb_primoCards {
     padding-inline: 0;
   }
@@ -969,8 +971,6 @@ main {
 }
 /* ─── Partners ───────────────────────────────────────────────────────── ✣ ─ */
 .partners {
-  width: 85%;
-  margin-inline: auto;
   margin-block: 2rem;
   display: flex;
   flex-direction: column;
@@ -1067,8 +1067,6 @@ main {
 /* ─── Faqs ───────────────────────────────────────────────────────────── ✣ ─ */
 .rb_faqs {
   margin-top: 7rem;
-  width: 85%;
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -1117,8 +1115,6 @@ details[open] {
   }
 }
 .global {
-  width: 85%;
-  margin-inline: auto;
   margin-top: 5rem;
 }
 .glblHeader {
@@ -1179,4 +1175,54 @@ details[open] {
   100% {
     transform: translateY(-10px);
   }
+}
+
+footer {
+  background-color: #f7f7f7;
+}
+.footer1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  padding: 2rem;
+  border-bottom: 2px solid #ccc;
+  gap: 2rem;
+}
+.footer1_col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.footer1_col1 {
+  min-width: 250px;
+  max-width: 300px;
+  font-size: 0.9rem;
+}
+.footer1_col1 > img {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .footer1 {
+    padding:2rem 0;
+  }
+}
+.social {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-block: 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.social_icons {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.4rem;
+}
+.social i{
+  cursor: pointer;
 }
