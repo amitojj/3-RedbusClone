@@ -2,6 +2,8 @@
 :root {
   --cbg: white;
   --mon: "Montserrat", sans-serif;
+  --fs_hd1: clamp(21px, calc(21px + (34 - 21) * ((100vw - 320px) / (1920 - 320))), 34px);
+
 }
 * {
   margin: 0px;
@@ -25,7 +27,8 @@ ul {
   list-style: none;
 }
 
-/* ─── Navbar ────────────────────────────────────────────────────── ✣ ─ */s
+/* ─── Navbar ────────────────────────────────────────────────────── ✣ ─ */
+/* ─── Navbar Container ───────────────────────────────────────────────── ✣ ─ */
 .rb_nav {
   position: sticky;
   top: 0;
@@ -43,7 +46,7 @@ ul {
   z-index: 1001;
   gap: 2rem;
 }
-/* ─── Logo ───────────────────────────────────────────── ✣ ─ */
+/* ───rb Logo ───────────────────────────────────────────── ✣ ─ */
 .rb_logo {
   display: flex;
   align-items: center;
@@ -51,12 +54,12 @@ ul {
 .rb_logo > img {
   height: 50px;
 }
-/* ─── Bars-menu ──────────────────────────────────────── ✣ ─ */
+/* ─── Bars-seperator-menu -──────────────────────────────────────── ✣ ─ */
 .rb_bars_menu_container {
   display: flex;
   align-items: center;
 }
-/* ─── Bars ───────────────────────────────────────────── ✣ ─ */
+/* ─── Bars-hidden ───────────────────────────────────────────── ✣ ─ */
 .rb_bars {
   padding: 0.8rem;
   border-radius: 5px;
@@ -65,7 +68,6 @@ ul {
 .rb_bars > i {
   font-size: 1.5rem;
   color: #bd3b4a;
-  /* display: none; */
 }
 /* ─── Seperator ──────────────────────────────────────── ✣ ─ */
 .rb_seperator {
@@ -73,13 +75,14 @@ ul {
   border-right: 1px solid #ddd;
   height: 25px;
 }
-/* ─── Menu ───────────────────────────────────────────── ✣ ─ */
+/* ───<ul> Menu ───────────────────────────────────────────── ✣ ─ */
 .rb_menu {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
+/* ─── <li> ─────────────────────────────────────────────────────────────── ✣ ─ */
 .rb_menu_item {
   display: flex;
   flex-direction: column;
@@ -96,7 +99,7 @@ ul {
   background-color: #ddd;
 }
 
-/* ─── Help-account ───────────────────────────────────── ✣ ─ */
+/* ─── Help-account-container ───────────────────────────────────── ✣ ─ */
 .rb_help_account {
   flex-grow: 1;
   padding-block: 0.7rem;
@@ -105,6 +108,7 @@ ul {
   align-items: center;
   gap: 1rem;
 }
+/* ─── help/account-Icon-text-wrap ─────────────────────────────────────────────────── ✣ ─ */
 .rb_ha_wrap {
   display: flex;
   justify-content: center;
@@ -126,19 +130,19 @@ ul {
 /* ─── 1440px-mq ──────────────────────────────────────────────────────── ✣ ─ */
 @media (max-width: 1440px) {
   .rb_nav {
-    padding-inline: 3rem;
+    padding-inline: 3rem; /* from 12rem */
   }
 }
 /* ─── Mediaquerry Navbar 1068px ─────────────────────────────── ✣ ─ */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .rb_nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid; /*from flex */
+    grid-template-columns: repeat(3, 1fr); /* logo-menu-help_account */
     gap: 0;
     padding-inline: 1rem;
   }
   .rb_bars_menu_container {
-    order: -1;
+    order: -1; /* moves menu to left and logo to center */
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -152,10 +156,10 @@ ul {
     cursor: pointer;
   }
   .rb_bars_menu:hover .rb_menu {
-    display: flex;
+    display: flex; /* bars-menu*/
   }
   .rb_menu {
-    display: none;
+     display: none; /* hidden */
     flex-direction: column;
   }
   .rb_menu_item {
@@ -183,25 +187,22 @@ ul {
     gap: 0.2rem;
   }
   .rb_ha_wrap p {
-    display: none;
+    display: none; /*hide text*/
   }
 }
 
 /* ─── Hero Section ───────────────────────────────────────────────────── ✣ ─ */
 .hero_section {
   background: url("assets/bg2.jpg");
-  background-size: cover;
+  background-size: cover; /* covers and maintain aspect ratio crop image vs contain that destroys aspect ratio, shows whole image*/
   background-repeat: none;
-  font-size: calc(1.2rem + 0.75vw);
+  font-size: var(--fs_hd1);
   color: rgb(255, 255, 255);
   font-weight: 800;
-  position: relative;
-  /* max-height: 30rem; */
-  /* height: 30rem; */
   display: flex;
   text-align: center;
 }
-.hero {
+.hero-right {
   align-self: flex-end;
   display: flex;
   height: 30rem;
@@ -210,21 +211,16 @@ ul {
   flex-grow: 0;
   width: auto;
   height: 100%;
-  
-  /* display: none; */
 }
-.search-container {
-  /* margin-top: 4rem; */
+.hero-left {
   flex-grow: 1;
   display: flex;
-  padding-block: 2.5rem;
+  padding: 2.5rem 2rem 2.5rem 0;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
-.find {
-  /* margin-top: 3rem; */
-  width: 60vw;
+.search {
   height: 7rem;
   background-color: white;
   border-radius: 2rem;
@@ -232,6 +228,7 @@ ul {
   font-size: 1.3rem;
   font-weight: 400;
   color: #4a4a4a;
+  cursor: pointer;
 }
 .from,
 .to {
@@ -369,7 +366,7 @@ ul {
   }
 }
 /* ─── Main ───────────────────────────────────────────────────────────── ✣ ─ */
-main{
+main {
   width: 85%;
   margin: auto;
 }
@@ -509,16 +506,16 @@ main{
 }
 #style-1 {
   background-image: linear-gradient(
-  90deg,
-  hsl(220, 65%, 35%),
-  hsl(219, 65%, 50%)
+    90deg,
+    hsl(220, 65%, 35%),
+    hsl(219, 65%, 50%)
   );
 }
 #style-2 {
   background-image: linear-gradient(
-  90deg,
-  hsl(171, 65%, 35%),
-  hsl(171, 65%, 50%)
+    90deg,
+    hsl(171, 65%, 35%),
+    hsl(171, 65%, 50%)
   );
 }
 #style-3 {
@@ -526,44 +523,44 @@ main{
 }
 #style-4 {
   background-image: linear-gradient(
-  90deg,
-  hsl(135, 65%, 35%),
-  hsl(135, 65%, 50%)
+    90deg,
+    hsl(135, 65%, 35%),
+    hsl(135, 65%, 50%)
   );
 }
 #style-5 {
   background-image: linear-gradient(
-  90deg,
-  hsl(45, 65%, 35%),
-  hsl(45, 65%, 50%)
+    90deg,
+    hsl(45, 65%, 35%),
+    hsl(45, 65%, 50%)
   );
 }
 #style-6 {
   background-image: linear-gradient(
-  90deg,
-  hsl(20, 65%, 35%),
-  hsl(20, 65%, 50%)
+    90deg,
+    hsl(20, 65%, 35%),
+    hsl(20, 65%, 50%)
   );
 }
 #style-7 {
   background-image: linear-gradient(
-  90deg,
-  hsl(338, 65%, 35%),
-  hsl(338, 65%, 50%)
+    90deg,
+    hsl(338, 65%, 35%),
+    hsl(338, 65%, 50%)
   );
 }
 #style-8 {
   background-image: linear-gradient(
-  90deg,
-  hsl(290, 65%, 24%),
-  hsl(290, 65%, 50%)
+    90deg,
+    hsl(290, 65%, 24%),
+    hsl(290, 65%, 50%)
   );
 }
 #style-9 {
   background-image: linear-gradient(
-  90deg,
-  hsl(245, 65%, 35%),
-  hsl(245, 65%, 50%)
+    90deg,
+    hsl(245, 65%, 35%),
+    hsl(245, 65%, 50%)
   );
 }
 /* ─── Mediaquerry 1024 Offers ────────────────────────────────────────── ✣ ─ */
@@ -698,7 +695,7 @@ main{
   display: flex;
   gap: 1rem;
   justify-content: start;
-  
+
   border-bottom: 1px solid #ccc;
   font-size: min(calc(0.6rem + 0.75vw), 1.2rem);
   width: fit-content;
@@ -916,7 +913,7 @@ main{
   width: 85%;
   margin-inline: auto;
   margin-block: 10rem;
-  
+
   display: flex;
   gap: 3rem;
   flex-direction: column;
@@ -1153,7 +1150,7 @@ details[open] {
     justify-content: center;
   }
 }
-/* ─── Go To Top ──────────────────────────────────────────────────────── ✣ ─ */ 
+/* ─── Go To Top ──────────────────────────────────────────────────────── ✣ ─ */
 .totop {
   display: flex;
   justify-content: end;
@@ -1166,10 +1163,10 @@ details[open] {
   border-radius: 1rem;
   cursor: pointer;
 }
-.topimgCont>img{
+.topimgCont > img {
   animation: move 1.5s linear infinite;
 }
-@keyframes move{
+@keyframes move {
   0% {
     transform: translateY(10px);
   }
