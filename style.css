@@ -1,9 +1,6 @@
+/* ─── Global Rules ───────────────────────────────────────────────────── ✣ ─ */
 :root {
   --cbg: white;
-  --ct1: #4a4a4a;
-  --ct2: white;
-  --rale: "Raleway", sans-serif;
-  --nun: "Nunito", sans-serif;
   --mon: "Montserrat", sans-serif;
 }
 * {
@@ -17,7 +14,6 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: auto;
-  height: 200vh;
 }
 a {
   text-decoration: none;
@@ -29,7 +25,7 @@ ul {
   list-style: none;
 }
 
-/* ─── Nav ────────────────────────────────────────────────────── ✣ ─ */
+/* ─── Navbar ────────────────────────────────────────────────────── ✣ ─ */s
 .rb_nav {
   position: sticky;
   top: 0;
@@ -42,9 +38,9 @@ ul {
   font-size: 1rem;
   font-weight: 500;
   user-select: none;
-  color: var(--ct1);
-  background-color: var(--cbg);
-  z-index: 100;
+  color: #4a4a4a;
+  background-color: white;
+  z-index: 1001;
   gap: 2rem;
 }
 /* ─── Logo ───────────────────────────────────────────── ✣ ─ */
@@ -191,7 +187,7 @@ ul {
   }
 }
 
-/* ─── Main ───────────────────────────────────────────────────── ✣ ─ */
+/* ─── Hero Section ───────────────────────────────────────────────────── ✣ ─ */
 .hero_section {
   background: url("assets/bg2.jpg");
   background-size: cover;
@@ -214,7 +210,7 @@ ul {
   flex-grow: 0;
   width: auto;
   height: 100%;
-
+  
   /* display: none; */
 }
 .search-container {
@@ -372,6 +368,11 @@ ul {
     border: none !important;
   }
 }
+/* ─── Main ───────────────────────────────────────────────────────────── ✣ ─ */
+main{
+  width: 85%;
+  margin: auto;
+}
 /* ─── Offers-section ─────────────────────────────────────────────────── ✣ ─ */
 .rb_offers {
   width: 85%;
@@ -508,16 +509,16 @@ ul {
 }
 #style-1 {
   background-image: linear-gradient(
-    90deg,
-    hsl(220, 65%, 35%),
-    hsl(219, 65%, 50%)
+  90deg,
+  hsl(220, 65%, 35%),
+  hsl(219, 65%, 50%)
   );
 }
 #style-2 {
   background-image: linear-gradient(
-    90deg,
-    hsl(171, 65%, 35%),
-    hsl(171, 65%, 50%)
+  90deg,
+  hsl(171, 65%, 35%),
+  hsl(171, 65%, 50%)
   );
 }
 #style-3 {
@@ -525,44 +526,44 @@ ul {
 }
 #style-4 {
   background-image: linear-gradient(
-    90deg,
-    hsl(135, 65%, 35%),
-    hsl(135, 65%, 50%)
+  90deg,
+  hsl(135, 65%, 35%),
+  hsl(135, 65%, 50%)
   );
 }
 #style-5 {
   background-image: linear-gradient(
-    90deg,
-    hsl(45, 65%, 35%),
-    hsl(45, 65%, 50%)
+  90deg,
+  hsl(45, 65%, 35%),
+  hsl(45, 65%, 50%)
   );
 }
 #style-6 {
   background-image: linear-gradient(
-    90deg,
-    hsl(20, 65%, 35%),
-    hsl(20, 65%, 50%)
+  90deg,
+  hsl(20, 65%, 35%),
+  hsl(20, 65%, 50%)
   );
 }
 #style-7 {
   background-image: linear-gradient(
-    90deg,
-    hsl(338, 65%, 35%),
-    hsl(338, 65%, 50%)
+  90deg,
+  hsl(338, 65%, 35%),
+  hsl(338, 65%, 50%)
   );
 }
 #style-8 {
   background-image: linear-gradient(
-    90deg,
-    hsl(290, 65%, 24%),
-    hsl(290, 65%, 50%)
+  90deg,
+  hsl(290, 65%, 24%),
+  hsl(290, 65%, 50%)
   );
 }
 #style-9 {
   background-image: linear-gradient(
-    90deg,
-    hsl(245, 65%, 35%),
-    hsl(245, 65%, 50%)
+  90deg,
+  hsl(245, 65%, 35%),
+  hsl(245, 65%, 50%)
   );
 }
 /* ─── Mediaquerry 1024 Offers ────────────────────────────────────────── ✣ ─ */
@@ -697,7 +698,7 @@ ul {
   display: flex;
   gap: 1rem;
   justify-content: start;
-
+  
   border-bottom: 1px solid #ccc;
   font-size: min(calc(0.6rem + 0.75vw), 1.2rem);
   width: fit-content;
@@ -915,7 +916,7 @@ ul {
   width: 85%;
   margin-inline: auto;
   margin-block: 10rem;
-
+  
   display: flex;
   gap: 3rem;
   flex-direction: column;
@@ -1152,14 +1153,27 @@ details[open] {
     justify-content: center;
   }
 }
+/* ─── Go To Top ──────────────────────────────────────────────────────── ✣ ─ */ 
 .totop {
-  width: 85%;
-  margin-inline: auto;
+  display: flex;
+  justify-content: end;
 }
 .topimgCont {
   display: flex;
   align-items: flex-end;
-  float: right;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   border: 2px solid #ccc;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.topimgCont>img{
+  animation: move 1.5s linear infinite;
+}
+@keyframes move{
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }

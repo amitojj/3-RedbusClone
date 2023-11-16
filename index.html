@@ -24,6 +24,8 @@
 </head>
 
 <body>
+  <!-- ─── Move To Top Target ──────────────────────────────────── ✣ ─ -->
+  <div id="top"></div>
   <!-- ─── Navbar ──────────────────────────────────────────────── ✣ ─ -->
   <nav class="rb_nav">
     <!-- ─── Logo ────────────────────────────────────────── ✣ ─ -->
@@ -75,49 +77,50 @@
     </div>
     <!-- ─── Nav-end ─────────────────────────────────────────────── ✣ ─ -->
   </nav>
-  <!-- ─── Main-start ──────────────────────────────────────────────────── ✣ ─ -->
-  <main>
-    <!-- ─── Hero-section ────────────────────────────────── ✣ ─ -->
-    <section class="hero_section">
-      <!-- ─── Hero Responsive-image ───────────────── ✣ ─ -->
-      <div class="hero">
-        <img src="./assets/HERO.png" alt="" class="allu">
-      </div>
-      <!-- ─── Search-section ──────────────────────── ✣ ─ -->
-      <div class="search-container">
-        <p>
-          India's No. 1 Online Bus Ticket Booking Site.
-        </p>
-        <div class="find">
-          <div class="from">
-            <i class="fa fa-bus"></i>
-            <div class="input">
-              <input type="text" id="from_station" class="input-field" >
-              <label for="from_station" class="placeholder">From</label>
-            </div>
-          </div>
-          <div class="to">
-            <i class="fa fa-bus"></i>
-            <div class="input">
-              <input type="text" id="to_station" class="input-field" >
-              <label for="to_station" class="placeholder">To</label>
-            </div>
-          </div>
-          <div class="date">
-            <i class="fa fa-calendar-alt"></i>
-            <div class="input">
-              <input type="text" id="datepicker"  class="input-field">
-              <label for="datepicker" class="placeholder">Date</label>
-            </div>
-          </div>
-          <div class="buses">
-            <p>Search Buses</p>
+  
+  <!-- ─── Hero-section ────────────────────────────────── ✣ ─ -->
+  <section class="hero_section">
+    <!-- ─── Hero Responsive-image ───────────────── ✣ ─ -->
+    <div class="hero">
+      <img src="./assets/HERO.png" alt="" class="allu">
+    </div>
+    <!-- ─── Search-section ──────────────────────── ✣ ─ -->
+    <div class="search-container">
+      <p>
+        India's No. 1 Online Bus Ticket Booking Site.
+      </p>
+      <div class="find">
+        <div class="from">
+          <i class="fa fa-bus"></i>
+          <div class="input">
+            <input type="text" id="from_station" class="input-field" >
+            <label for="from_station" class="placeholder">From</label>
           </div>
         </div>
-        <p class="motto">Apno ko, Sapno ko, Kareeb Laaye.</p>
+        <div class="to">
+          <i class="fa fa-bus"></i>
+          <div class="input">
+            <input type="text" id="to_station" class="input-field" >
+            <label for="to_station" class="placeholder">To</label>
+          </div>
+        </div>
+        <div class="date">
+          <i class="fa fa-calendar-alt"></i>
+          <div class="input">
+            <input type="text" id="datepicker"  class="input-field">
+            <label for="datepicker" class="placeholder">Date</label>
+          </div>
+        </div>
+        <div class="buses">
+          <p>Search Buses</p>
+        </div>
       </div>
-      
-    </section>
+      <p class="motto">Apno ko, Sapno ko, Kareeb Laaye.</p>
+    </div>
+    
+  </section>
+  <!-- ─── Main-start ──────────────────────────────────────────────────── ✣ ─ -->
+  <main>
     <!-- ─── Section-offers ──────────────────────────────────────────────── ✣ ─ -->
     <section class="rb_offers">
       <!-- ─── Offer-header ────────────────────────── ✣ ─ -->
@@ -339,6 +342,7 @@
       </div>
     </section>
     <!-- ─── Apps ────────────────────────────────────────── ✣ ─ -->
+    
     <section class="rb_apps">
       <div class="review">
         <p>ENJOY THE APP!</p>
@@ -587,10 +591,10 @@
       </div>
     </section>
     <div class="totop">
-      <div class="topimgCont">
+      <a class="topimgCont" href="#top">
         <img src="./assets/scrollArrow.svg" alt="">
-      </div>
-
+      </a>
+      
     </div>
     test
   </main>
