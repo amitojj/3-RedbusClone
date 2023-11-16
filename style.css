@@ -2,8 +2,12 @@
 :root {
   --cbg: white;
   --mon: "Montserrat", sans-serif;
-  --fs_hd1: clamp(21px, calc(21px + (34 - 21) * ((100vw - 320px) / (1920 - 320))), 34px);
-
+  --fs_hd1: clamp(
+    21px,
+    calc(21px + (34 - 21) * ((100vw - 320px) / (1920 - 320))),
+    34px
+  );
+  --fs_hd2: clamp(25px, calc(25px + 13 * ((100vw - 320px) / 1600)), 38px);
 }
 * {
   margin: 0px;
@@ -159,7 +163,7 @@ ul {
     display: flex; /* bars-menu*/
   }
   .rb_menu {
-     display: none; /* hidden */
+    display: none; /* hidden */
     flex-direction: column;
   }
   .rb_menu_item {
@@ -256,6 +260,7 @@ ul {
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.3rem;
   font-weight: 600;
 }
@@ -266,17 +271,17 @@ ul {
   border: none;
   font-size: 1.2rem;
   outline: none;
-  width: 50%;
+  width: 100%;
 }
-.from-hidden {
+/* .from-hidden {
   display: none;
-}
+} */
 .placeholder {
   position: absolute;
   left: 0;
 }
 .input-field:focus + .placeholder {
-  transform: translateY(-100%) scale(1);
+  transform: translateY(-100%);
   font-size: 0.9rem;
 }
 .input-date {
@@ -285,16 +290,17 @@ ul {
 }
 .motto {
   color: #fdd67c;
-  font-size: calc(1.5rem + 0.75vw);
+  font-size: var(--fs_hd2);
   font-weight: 900;
 }
 
 /* ─── Mediaquerry-herosection-1024px ─────────────────────────────────── ✣ ─ */
-@media (max-width: 1023px) {
-  .search-container {
+@media (max-width: 1024px) {
+  .hero-left{
     padding-block: 0;
   }
-  .find {
+  .search {
+    width: 100%;
     flex-direction: column;
     height: auto;
     border-radius: 2rem;
