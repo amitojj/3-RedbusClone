@@ -33,6 +33,9 @@ a:hover {
 ul {
   list-style: none;
 }
+li {
+  list-style: none;
+}
 
 /* ─── Navbar ────────────────────────────────────────────────────── ✣ ─ */
 /* ─── Navbar Container ───────────────────────────────────────────────── ✣ ─ */
@@ -45,7 +48,7 @@ ul {
   justify-content: space-around;
   padding-block: 1rem;
   padding-inline: 12rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   user-select: none;
   color: #4a4a4a;
@@ -109,7 +112,6 @@ ul {
 /* ─── Help-account-container ───────────────────────────────────── ✣ ─ */
 .rb_help_account {
   flex-grow: 1;
-  padding-block: 0.7rem;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -120,7 +122,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3rem 0.5rem;
+  padding: 1rem 0.5rem;
   border-radius: 5px;
   gap: 0.7rem;
 }
@@ -133,6 +135,35 @@ ul {
 .rb_ha_wrap:hover {
   background-color: #ddd;
   cursor: pointer;
+}
+#account_ddl {
+  position: relative;
+}
+.acc_ddl {
+  width: max-content;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  color: #848484;
+  background-color: #fff;
+  top: 100%;
+  padding: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  right: -10%;
+}
+#account_ddl:hover .acc_ddl {
+  display: flex;
+}
+.sep_ddl {
+  border: 1px solid #efebeb;
+  margin-block: 1rem;
+}
+.acc_ddl > li {
+  padding: 1rem;
+}
+.acc_ddl > li:hover {
+  background-color: #f4f1f1;
 }
 /* ─── 1440px-mq ──────────────────────────────────────────────────────── ✣ ─ */
 @media (max-width: 1440px) {
@@ -185,7 +216,7 @@ ul {
   }
 }
 /* ─── Mq-768 ─────────────────────────────────────────────────────────── ✣ ─ */
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .rb_help_account {
     gap: 0.1rem;
   }
@@ -195,6 +226,9 @@ ul {
   }
   .rb_ha_wrap p {
     display: none; /*hide text*/
+  }
+  .acc_ddl {
+    right: 0px;
   }
 }
 
@@ -687,6 +721,9 @@ main {
   }
 }
 /* ─── Rides ──────────────────────────────────────────────────────────── ✣ ─ */
+.radios {
+  display: none;
+}
 .rb_rides {
   display: flex;
   margin-top: 10rem;
@@ -695,6 +732,13 @@ main {
 .rb_rides_left {
   width: 50%;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.rb_rides_rental,
+.rb_rides_train {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -726,26 +770,68 @@ main {
   align-items: center;
   cursor: pointer;
 }
-.rental {
+#cabus:checked ~ .rb_rides_left .rb_rides_rental {
+  animation: slide-l2r 1s ease-in-out;
+}
+
+#cabus:checked ~ .rb_rides_left .rb_rides_train {
+  display: none;
+}
+#train:checked ~ .rb_rides_left .rb_rides_train {
+  animation: slide-r2l 1s ease-in-out;
+}
+#train:checked ~ .rb_rides_left .rb_rides_rental {
+  display: none;
+}
+#cabus:checked ~ .rb_rides_left .rental {
   border-bottom: 3px solid #d84e55;
   color: #d84e55;
   font-weight: 500;
 }
-.train {
+#cabus:checked ~ .rb_rides_left .train {
   padding-right: 3rem;
   filter: grayscale();
 }
-.train:hover {
+#cabus:checked ~ .rb_rides_left .train:hover {
   filter: none;
   background-color: #ccc;
+}
+#train:checked ~ .rb_rides_left .train {
+  border-bottom: 3px solid #d84e55;
+  color: #d84e55;
+  font-weight: 500;
+  padding-right: 3rem;
+  /* margin-left: 3rem; */
+}
+#train:checked ~ .rb_rides_left .rental {
+  filter: grayscale();
+}
+#train:checked ~ .rb_rides_left .rental:hover {
+  filter: none;
+  background-color: #ccc;
+}
+
+#cabus:checked ~ .rb_rides_right #itrain {
+  display: none;
+}
+#train:checked ~ .rb_rides_right #ibus {
+  display: none;
+}
+#cabus:checked ~ .rb_rides_right #ibus {
+  animation: scale100 1s ease-in-out;
+}
+#train:checked ~ .rb_rides_right #itrain {
+  animation: scale100 1s ease-in-out;
 }
 .tab_separator {
   border: 1px solid #ccc;
   margin-block: 1rem;
 }
-.rb_rides_left > p {
+.rb_rides_rental > p,
+.rb_rides_train > p {
   margin-bottom: 1.5rem;
 }
+
 .ride_mode {
   display: flex;
   align-items: center;
@@ -753,6 +839,7 @@ main {
 }
 .ride_mode p {
   margin: 0 1rem;
+  font-weight: 600;
 }
 .mode_img_cont {
   width: 80px;
@@ -777,10 +864,17 @@ main {
   position: relative;
 }
 .rb_rides_right img {
-  width: 116%;
+  position: absolute;
   margin-left: -90px;
-  margin-bottom: 5rem;
   right: 0;
+}
+#ibus {
+  bottom: 10%;
+  width: 116%;
+}
+#itrain {
+   width: 100%;
+  bottom: -10%;
 }
 .ride_book {
   display: flex;
@@ -794,6 +888,43 @@ main {
   border-radius: 1rem;
   font-size: min(calc(0.6rem + 0.75vw), 1rem);
   font-weight: 600;
+  cursor: pointer;
+}
+.ride_book:hover {
+  box-shadow: 2px 3px 5px #1414147f;
+}
+@keyframes slide-l2r {
+  0% {
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slide-r2l {
+  0% {
+    transform: translateX(100px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes scale100 {
+  0% {
+    transform: scale(0%);
+  }
+  50% {
+    transform: scale(120%);
+  }
+  100% {
+    transform: scale(100%);
+  }
 }
 @media (max-width: 768px) {
   .rb_rides_right {
@@ -819,6 +950,7 @@ main {
   border-radius: 2rem;
   color: white;
   flex-wrap: wrap;
+  margin-top: 10rem;
 }
 .review > p {
   font-size: calc(1.2rem + 0.75vw);
@@ -1205,7 +1337,7 @@ footer {
 }
 @media (max-width: 767px) {
   .footer1 {
-    padding:2rem 0;
+    padding: 2rem 0;
   }
 }
 .social {
@@ -1223,6 +1355,6 @@ footer {
   gap: 2.5rem;
   font-size: 1.4rem;
 }
-.social i{
+.social i {
   cursor: pointer;
 }

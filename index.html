@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900;1000&family=Raleway:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -17,7 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css"
     />
 
-    <title> </title>
+    <title>Online Bus Ticket Booking at Low Price and Best Offers - redBus </title>
     <style></style>
   </head>
 
@@ -66,10 +67,18 @@
           <i class="fa fa-headset"></i>
           <p>Help</p>
         </div>
-        <div class="rb_ha_wrap">
+        <div class="rb_ha_wrap" id="account_ddl">
           <i class="fa-regular fa-circle-user"></i>
           <p>Account</p>
           <i class="fa fa-chevron-down"></i>
+          <div class="acc_ddl">
+            <li>Cancel Ticket</li>
+            <li>Change Travel Date</li>
+            <li>SHow My Ticket</li>
+            <li>Email/SMS</li>
+            <div class="sep_ddl"></div>
+            <li>Login/SIgn Up</li>
+          </div>
         </div>
         <!-- ─── Help-account-end ────────────────────── ✣ ─ -->
       </div>
@@ -283,48 +292,84 @@
       </section>
       <!-- ─── Rides ──────────────────────────────────────── ✣ ─ -->
       <section class="rb_rides">
+        <input type="radio" name="tab" id="cabus" checked class="radios" />
+        <input type="radio" name="tab" id="train" class="radios" />
+
         <div class="rb_rides_left">
           <div class="rides_header">
             NOW, <span>GET MORE THAN JUST BUS </span>TICKETS WITH REDBUS!
           </div>
           <div class="ride_tabs">
-            <div class="rental">
-              <img src="./assets/ryde.svg" alt="" />
-              <p>Cab/Bus Rental</p>
-            </div>
+            <label for="cabus">
+              <div class="rental">
+                <img src="./assets/ryde.svg" alt="" />
+                <p>Cab/Bus Rental</p>
+              </div></label
+            >
             <div class="tab_separator"></div>
-            <div class="train">
-              <img src="./assets/redRail.svg" alt="" />
-              <p>Train Tickets</p>
-            </div>
+            <label for="train"
+              ><div class="train">
+                <img src="./assets/redRail.svg" alt="" />
+                <p>Train Tickets</p>
+              </div></label
+            >
           </div>
-          <p>Rent Cabs, Tempo Travellers & Buses with best drivers</p>
-          <div class="ride_mode">
-            <div class="mode_img_cont">
-              <img src="./assets/ryde_car.svg" alt="" />
+          <div class="rb_rides_rental">
+            <p>Rent Cabs, Tempo Travellers & Buses with best drivers</p>
+            <div class="ride_mode">
+              <div class="mode_img_cont">
+                <img src="./assets/ryde_car.svg" alt="" />
+              </div>
+              <p>Outstation</p>
             </div>
-            <p>Outstation</p>
-          </div>
-          <div class="ride_mode">
-            <div class="mode_img_cont">
-              <img src="./assets/ryde_car_hourly.svg" alt="" />
-            </div>
+            <div class="ride_mode">
+              <div class="mode_img_cont">
+                <img src="./assets/ryde_car_hourly.svg" alt="" />
+              </div>
 
-            <p>Hourly Rental</p>
-          </div>
-          <div class="ride_mode">
-            <div class="mode_img_cont">
-              <img src="./assets/ryde_airport_transport.svg" alt="" />
+              <p>Hourly Rental</p>
             </div>
-            <p>Airport Transfers</p>
+            <div class="ride_mode">
+              <div class="mode_img_cont">
+                <img src="./assets/ryde_airport_transport.svg" alt="" />
+              </div>
+              <p>Airport Transfers</p>
+            </div>
+            <div class="ride_book">
+              <span>Book Cab / Bus Rental</span>
+              <i class="fa fa-arrow-right-long"></i>
+            </div>
           </div>
-          <div class="ride_book">
-            <span>Book Cab / Bus Rental</span>
-            <i class="fa fa-arrow-right-long"></i>
+          <div class="rb_rides_train">
+            <p>Book IRCTC Train Tickets on redRail simple & superfast booking process with no service fee + no payment gateway charge.</p>
+            <div class="ride_mode">
+              <div class="mode_img_cont">
+                <img src="./assets/railAuthorized.svg" alt="" />
+              </div>
+              <p>Authorised IRCTC Partner</p>
+            </div>
+            <div class="ride_mode">
+              <div class="mode_img_cont">
+                <img src="./assets/railHasslefree.svg" alt="" />
+              </div>
+
+              <p>Instant refunds on UPI payments</p>
+            </div>
+            <div class="ride_mode">
+              <div class="mode_img_cont">
+                <img src="./assets/railrefunds.svg" alt="" />
+              </div>
+              <p>Hassle- free customer support</p>
+            </div>
+            <div class="ride_book">
+              <span>Book Train Tickets</span>
+              <i class="fa fa-arrow-right-long"></i>
+            </div>
           </div>
         </div>
         <div class="rb_rides_right">
-          <img src="./assets/busses.svg" alt="" />
+          <img src="./assets/busses.svg" alt="" id="ibus" />
+          <img src="./assets/railPop.svg" alt="" id="itrain" />
         </div>
       </section>
       <!-- ─── Apps ────────────────────────────────────────── ✣ ─ -->
@@ -702,10 +747,15 @@
           <div><a href="#">Trains between Stations</a></div>
         </div>
       </div>
-       <div class="footer1">
+      <div class="footer1">
         <div class="footer1_col1">
-          <img src="./assets/rdc-redbus-logo.svg" alt="">
-          <p>redBus is the world's largest online bus ticket booking service trusted by over 25 million happy customers globally. redBus offers bus ticket booking through its website, iOS and Android mobile apps for all major routes.</p>
+          <img src="./assets/rdc-redbus-logo.svg" alt="" />
+          <p>
+            redBus is the world's largest online bus ticket booking service
+            trusted by over 25 million happy customers globally. redBus offers
+            bus ticket booking through its website, iOS and Android mobile apps
+            for all major routes.
+          </p>
         </div>
         <div class="footer1_col">
           <h3>About redBus</h3>
@@ -735,8 +785,7 @@
           <div><a href="#">Malaysia</a></div>
           <div><a href="#">Indonesia</a></div>
           <div><a href="#">Peru</a></div>
-          <div><a href="#">Colombia
-</a></div>
+          <div><a href="#">Colombia </a></div>
         </div>
         <div class="footer1_col">
           <h3>Our Partners</h3>
@@ -744,7 +793,6 @@
           <div><a href="#">Goibibo Hotels</a></div>
           <div><a href="#">Makemytrip Bus</a></div>
           <div><a href="#">Makemytrip Hotels</a></div>
-         
         </div>
       </div>
       <div class="social">
@@ -755,7 +803,6 @@
           <a href=""><i class="fa-brands fa-twitter-square"></i></a>
           <a href=""><i class="fa-brands fa-linkedin"></i></a>
         </div>
-
       </div>
     </footer>
   </body>
