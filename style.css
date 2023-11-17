@@ -459,7 +459,7 @@ main {
   position: relative;
 }
 .rb_offer_cards:hover {
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 /* ─── Carousel-buttons ───────────────────────────────────────────────── ✣ ─ */
 .rb_arrows {
