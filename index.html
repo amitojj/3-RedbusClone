@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900;1000&family=Raleway:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -18,7 +18,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css"
     />
 
-    <title>Online Bus Ticket Booking at Low Price and Best Offers - redBus </title>
+    <title>
+      Online Bus Ticket Booking at Low Price and Best Offers - redBus
+    </title>
     <style></style>
   </head>
 
@@ -96,14 +98,23 @@
         <p>India's No. 1 Online Bus Ticket Booking Site.</p>
         <div class="search">
           <div class="from">
-            <i class="fa fa-bus"></i>
+            <div class="icons">
+              <i class="fa-solid fa-person-walking-luggage fa-xs"></i>
+              <i class="fa fa-bus"></i>
+            </div>
             <div class="input">
               <input type="text" id="from_station" class="input-field" />
               <label for="from_station" class="placeholder">From</label>
             </div>
+            <i class="fa-solid fa-right-left leftRight"></i>
           </div>
           <div class="to">
-            <i class="fa fa-bus"></i>
+            <div class="icons">
+              <i
+                class="fa-solid fa-person-walking-luggage fa-flip-horizontal fa-xs"
+              ></i>
+              <i class="fa fa-bus"></i>
+            </div>
             <div class="input">
               <input type="text" id="to_station" class="input-field" />
               <label for="to_station" class="placeholder">To</label>
@@ -288,7 +299,12 @@
       </section>
       <!-- ─── Advertisement ───────────────────────────────── ✣ ─ -->
       <section class="rb_advert">
-        <img src="./assets/adv.png" alt="" />
+        <picture>
+          <source media="(min-width: 768px)" srcset="./assets/adv.webp" />
+          <source media="(min-width: 425px)" srcset="./assets/advm.webp" />
+          <source media="(max-width: 424px)" srcset="./assets/advs.webp" />
+          <img src="./assets/adv.webp" />
+        </picture>
       </section>
       <!-- ─── Rides ──────────────────────────────────────── ✣ ─ -->
       <section class="rb_rides">
@@ -341,7 +357,10 @@
             </div>
           </div>
           <div class="rb_rides_train">
-            <p>Book IRCTC Train Tickets on redRail simple & superfast booking process with no service fee + no payment gateway charge.</p>
+            <p>
+              Book IRCTC Train Tickets on redRail simple & superfast booking
+              process with no service fee + no payment gateway charge.
+            </p>
             <div class="ride_mode">
               <div class="mode_img_cont">
                 <img src="./assets/railAuthorized.svg" alt="" />
@@ -705,7 +724,7 @@
       </div>
     </main>
     <footer>
-      <div class="footer1">
+      <section class="footer1">
         <div class="footer1_col">
           <h3>Top RTCs</h3>
           <div><a href="#">APSRTC</a></div>
@@ -746,8 +765,8 @@
           <div><a href="#">Train Seat Availability</a></div>
           <div><a href="#">Trains between Stations</a></div>
         </div>
-      </div>
-      <div class="footer1">
+      </section>
+      <section class="footer1">
         <div class="footer1_col1">
           <img src="./assets/rdc-redbus-logo.svg" alt="" />
           <p>
@@ -794,8 +813,8 @@
           <div><a href="#">Makemytrip Bus</a></div>
           <div><a href="#">Makemytrip Hotels</a></div>
         </div>
-      </div>
-      <div class="social">
+      </section>
+      <section class="social">
         <p>Ⓒ 2023 Redbus India Pvt Ltd. All rights reserved</p>
         <div class="social_icons">
           <a href=""><i class="fa-brands fa-facebook-square"></i></a>
@@ -803,7 +822,7 @@
           <a href=""><i class="fa-brands fa-twitter-square"></i></a>
           <a href=""><i class="fa-brands fa-linkedin"></i></a>
         </div>
-      </div>
+      </section>
     </footer>
   </body>
 </html>

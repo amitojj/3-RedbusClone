@@ -1,4 +1,20 @@
 /* ─── Global Rules ───────────────────────────────────────────────────── ✣ ─ */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #bd3b4a;
+}
 :root {
   --cbg: white;
   --mon: "Montserrat", sans-serif;
@@ -12,12 +28,16 @@
   --fs_btn1: clamp(8px, calc(8px + 10 * ((100vw - 320px) / 1600)), 18px);
   --fs_btn2: clamp(12px, calc(12px + 8 * ((100vw - 320px) / 1600)), 20px);
   --fs_hd4: clamp(21px, calc(21px + 10 * ((100vw - 320px) / 1600)), 31px);
-
 }
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 110px;
 }
 body {
   background-color: var(--cbg);
@@ -25,6 +45,7 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: auto;
+  scroll-snap-type: y mandatory;
 }
 a {
   text-decoration: none;
@@ -39,7 +60,9 @@ ul {
 li {
   list-style: none;
 }
-
+section {
+  scroll-snap-align: start;
+}
 /* ─── Navbar ────────────────────────────────────────────────────── ✣ ─ */
 /* ─── Navbar Container ───────────────────────────────────────────────── ✣ ─ */
 .rb_nav {
@@ -202,6 +225,9 @@ li {
   .rb_menu {
     display: none; /* hidden */
     flex-direction: column;
+    padding-block: 2rem;
+    gap: 2rem;
+    justify-content: center;
   }
   .rb_menu_item {
     flex-direction: row;
@@ -245,6 +271,7 @@ li {
   font-weight: 800;
   display: flex;
   text-align: center;
+  height: 30rem;
 }
 /* ────────────────────────────────────────────────────────────────────── ✣ ─ */
 .hero-left {
@@ -277,6 +304,24 @@ li {
   cursor: pointer;
 }
 /* ────────────────────────────────────────────────────────────────────── ✣ ─ */
+.icons {
+  display: flex;
+  align-items: baseline;
+}
+.leftRight {
+  position: absolute;
+  right: 0;
+  border: 1px solid #bbb;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translateX(50%);
+  font-size: 0.875rem;
+  z-index: 80;
+}
+.leftRight:hover {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+}
 .from,
 .to {
   width: 27%;
@@ -286,7 +331,9 @@ li {
   justify-content: start;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
+
 .date {
   width: 23%;
   padding: 2rem;
@@ -343,6 +390,11 @@ li {
     flex-direction: column;
     height: auto;
     border-radius: 2rem;
+  }
+  .leftRight {
+    bottom: 0;
+    right: 50%;
+    transform: translateY(50%) translateX(50%) rotate(90deg);
   }
   .from,
   .to,
@@ -430,6 +482,7 @@ main {
   flex-direction: column;
   padding: 2rem;
   gap: 1rem;
+  position: relative;
 }
 /* ─── Offer-header ───────────────────────────────────────────────────── ✣ ─ */
 .rb_offer-header {
@@ -456,13 +509,11 @@ main {
 .rb_offer_cards {
   display: flex;
   overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-x: auto;
   gap: 1rem;
-  transition: overflow 2s linear 1s;
-  position: relative;
 }
-.rb_offer_cards:hover {
-  /* overflow-x: auto; */
+.rb_offer_cards::-webkit-scrollbar {
+  display: none;
 }
 /* ─── Carousel-buttons ───────────────────────────────────────────────── ✣ ─ */
 .rb_arrows {
@@ -480,15 +531,15 @@ main {
 
 .left_arrow {
   background-image: linear-gradient(to right, white, #ffffff34);
-  left: 0;
+  left: 2rem;
 }
 .right_arrow {
   justify-content: end;
   background-image: linear-gradient(to left, white, #ffffff34);
-  right: 0;
+  right: 2rem;
 }
 /* ─── Arrow-angles ───────────────────────────────────────────────────── ✣ ─ */
-.ar_angles { 
+.ar_angles {
   padding: 15px 20px;
   color: rgb(0, 0, 115);
   background-color: #fff;
@@ -643,10 +694,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     gap: 1rem;
-    transition: overflow 2s linear 1s;
   }
   .rb_offer_cards:hover {
     overflow-y: auto;
@@ -701,7 +751,7 @@ main {
 /* ─── Advertisement ──────────────────────────────────────────────────── ✣ ─ */
 .rb_advert {
   width: 80%;
-  margin-top: -7rem;
+  margin-top: -5rem;
   margin-inline: auto;
   border-radius: 1rem;
 }
@@ -712,12 +762,12 @@ main {
 }
 @media (max-width: 1023px) {
   .rb_advert {
-    margin-top: 0;
+    margin-top: 3rem;
   }
 }
 @media (max-width: 768px) {
   .rb_advert {
-    margin-top: -5rem;
+    margin-top: -2rem;
   }
 }
 @media (max-width: 426px) {
@@ -731,7 +781,7 @@ main {
 }
 .rb_rides {
   display: flex;
-  margin-top: 10rem;
+  margin-top: 7rem;
   margin-bottom: 5rem;
 }
 .rb_rides_left {
@@ -878,7 +928,7 @@ main {
   width: 116%;
 }
 #itrain {
-   width: 100%;
+  width: 100%;
   bottom: -10%;
 }
 .ride_book {
@@ -957,8 +1007,9 @@ main {
   flex-wrap: wrap;
   margin-top: 10rem;
 }
+
 .review > p {
-  font-size:var(--fs_hd1);
+  font-size: var(--fs_hd1);
   color: white;
   margin-bottom: 2rem;
 }
@@ -1047,21 +1098,33 @@ main {
     padding-inline: 0.5rem;
     gap: 2rem;
   }
+  .rtg_box {
+    padding-block: 1.5rem;
+  }
+  .review {
+    width: 100%;
+  }
   .review > p {
     text-align: center;
   }
   .ratings {
     flex-direction: column;
+    gap: 1rem;
   }
   .rtg_box {
     padding-inline: 0.7rem;
+  }
+  .feature {
+    margin-bottom: 1rem;
+  }
+  .rtg_os {
+    margin-top: 0;
   }
 }
 /* ─── Primo ──────────────────────────────────────────────────────────── ✣ ─ */
 
 .rb_primo {
   margin-block: 10rem;
-
   display: flex;
   gap: 3rem;
   flex-direction: column;
@@ -1119,7 +1182,7 @@ main {
   font-weight: 500;
 }
 .ptnr_rtc {
-  font-size:var(--fs_hd1);
+  font-size: var(--fs_hd1);
   display: flex;
   justify-content: space-between;
   align-items: center;
