@@ -1091,6 +1091,14 @@ main {
     text-align: center;
   }
 }
+@media (max-width: 500px) {
+  .qr_code,
+  .store_butt {
+    width: 13rem;
+    height: auto;
+    text-align: center;
+  }
+}
 @media (max-width: 425px) {
   .rb_apps {
     background-image: none;
